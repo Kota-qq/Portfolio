@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    margin: 10px;
+}
+
+h4 {
+    margin: 10px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(3, 18, 61, 0.575),rgba(3, 18, 61, 0.575));
+    clip-path: circle(40% at 18% 29%);
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(3, 18, 61, 0.575),rgba(3, 18, 61, 0.575));
+    clip-path: circle(30% at 100% 100%);
+    z-index: -1;
+}
+
+.card {
+    border-top: 1px solid rgba(255, 255, 255,0.1);
+    border-left: 1px solid rgba(255, 255, 255,0.1);
+    width: 500px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.card .content {
+    padding: 20px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card:hover .content {
+    opacity: 1;
+
+}
+
+.card .content a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #747474;
+    margin-top: 15px;
+    border-radius: 20px;
+    color: #000;
+    font-weight: 500;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+nav {
+    display: block;
+    position: fixed;
+    background-color: #3f3f3fb0;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    transition: all 0.5s;
+    z-index: 3;
+    opacity: 0;
+}
+
+.open nav{
+    left: 0;
+    opacity: 1;
+}
+
+nav .inner {
+    padding: 25px;
+}
+
+nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .inner ul li {
+
+    margin: 0;
+    border-bottom: 1px solid #000000;
+}
+
+nav .inner ul li a {
+    display: block;
+    width: 220px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    padding: 1rem;
+    transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover{
+    background-color: #494949f5;
+}
+
+.toggle-btn {
+display: block;
+position: fixed;
+top: 30px;
+right: 30px;
+width: 30px;
+height: 30px;
+z-index: 3;
+cursor: pointer;
+}
+
+.toggle-btn span {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #707070; 
+    transition: all 0.5s;
+    border-radius: 4px;
+}
+
+.toggle-btn span:nth-child(1) {
+    top: 4px;
+}
+
+.toggle-btn span:nth-child(2) {
+    top: 14px;
+}
+
+.toggle-btn span:nth-child(3) {
+    bottom: 4px;
+}
+
+.open .toggle-btn span {
+    background-color: #707070;
+}
+
+.open .toggle-btn span:nth-child(1) {
+    transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle-btn span:nth-child(2) {
+    transform: translateY(10px) rotate(-315deg);
+    opacity: 0;
+}
+
+.open .toggle-btn span:nth-child(3) {
+    transform: translateY(-10px) rotate(315deg);
+}
+
+
+#mask {
+    display: none;
+    transition: all 0.5s;
+}
+
+.open #mask {
+
+display: block;
+background-color: #000;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+position: fixed;
+opacity: 0.8;
+cursor: pointer;
+}

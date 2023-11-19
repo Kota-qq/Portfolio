@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url(./glass.jpg);
+    background-size: cover;
+    background-position: center;
+    /* これ↓を設定すると背景画像が固定される */
+    background-attachment: fixed;
+}
+body::after {
+    content: "";
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 500vh;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.title-about {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-size: 1.2rem;
+    opacity: 0;
+}
+
+.title-about.active {
+    opacity: 1;
+    transition: all 3s;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.img-wrap {
+    position: relative;
+    top: 40%;
+    height: 40%;
+    width: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.img-wrap.active {
+    width: 40vw;
+    opacity: 1;
+    transition: opacity 1s,width 2s;
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40vw;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.6);
+}
+
+.img-wrap.title-about.title.active > .img {
+    transform: scale(1);
+    transition: 1s ease-out;
+}
+
+h2 {
+    position: absolute;
+    font-size: 1.3rem;
+    top: 70%;
+    z-index: 2;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+h2.active {
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+
+nav {
+    display: block;
+    position: fixed;
+    background-color: #3f3f3fb0;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    transition: all 0.5s;
+    z-index: 3;
+    opacity: 0;
+}
+
+.open nav{
+    left: 0;
+    opacity: 1;
+}
+
+nav .inner {
+    padding: 25px;
+}
+
+nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .inner ul li {
+
+    margin: 0;
+    border-bottom: 1px solid #000000;
+}
+
+nav .inner ul li a {
+    display: block;
+    width: 220px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    padding: 1rem;
+    transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover{
+    background-color: #494949f5;
+}
+
+.toggle-btn {
+display: block;
+position: fixed;
+top: 30px;
+right: 30px;
+width: 30px;
+height: 30px;
+z-index: 3;
+cursor: pointer;
+}
+
+.toggle-btn span {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #707070;
+    transition: all 0.5s;
+    border-radius: 4px;
+}
+
+.toggle-btn span:nth-child(1) {
+    top: 4px;
+}
+
+.toggle-btn span:nth-child(2) {
+    top: 14px;
+}
+
+.toggle-btn span:nth-child(3) {
+    bottom: 4px;
+}
+
+.open .toggle-btn span {
+    background-color: #707070;
+}
+
+.open .toggle-btn span:nth-child(1) {
+    transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle-btn span:nth-child(2) {
+    transform: translateY(10px) rotate(-315deg);
+    opacity: 0;
+}
+
+.open .toggle-btn span:nth-child(3) {
+    transform: translateY(-10px) rotate(315deg);
+}
+

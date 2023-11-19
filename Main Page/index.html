@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotaro Inoue</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="navArea">
+        <nav>
+            <div class="inner">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">History of My life</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="mask"></div>
+    </div>
+
+
+    <div class="card">
+        <div class="content">
+            <h1>Kotaro Inoue</h1>
+            <h4>Government Official→Programmer</h4>
+            <p class="age">
+                1997/5/27<br>
+                 I have been working at the Cabinet Office for 6 years.
+            </p>
+
+            <a href="#">More Detail</a>
+            
+
+        </div>
+    </div>
+
+    <script src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".card"), {
+            max: 25,
+            speed: 400,
+            glare:true,
+            "max-glare":0.5,
+        });
+        
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
